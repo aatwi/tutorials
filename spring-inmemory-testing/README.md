@@ -20,10 +20,10 @@ In addition to the inherited functionalities, we have a new method that finds bo
 1. [SpringBookRepositoryTest.java](src\test\java\dev\aatwi\imrt\repository\SpringBookRepositoryTest.java): This is a SpringBootTest, thus, it starts a Spring instance before running the tests. 
 1. [NoSpringBookRepositoryTest.java](src\test\java\dev\aatwi\imrt\repository\NoSpringBookRepositoryTest.java): This test suite does not require running Spring when running tests. 
  
-**Note:** In real projects, we don't need to unit test all the Repository methods
-like I did here, since we can assume it fully tested by the Spring Framework. 
-Nevertheless, the same logic can apply for tests that require initializing an 
-instance of the repository.  
+**Note:** In reality, we don't need to unit test all the Repository methods like
+I did here, since we can assume it fully tested by the Spring Framework. 
+Nevertheless, the same logic can be applied for tests that require initializing 
+an instance of the repository.  
  
 ## Problem
 Spring simplifies writing the repository layer for us. By extending the interface 
@@ -35,9 +35,33 @@ However, the price we pay for that is in the tests; because to run any test, we
 need to start Spring. Thus, losing a lot of precious time!
 
 ### Illustration  
+Let's analyze the problem! 
 
+In the test class [SpringBookRepositoryTest.java](src\test\java\dev\aatwi\imrt\repository\SpringBookRepositoryTest.java), 
+we have 8 test cases to cover 8 different methods of the BookRepository interface. 
+To run those tests properly we need to: 
+1. Tag the test with the '@SpringBootTest'annotation. This will be used to run
+Spring before running the test.
+1. Tag the BookRepository variable with '@Autowired' annotation. This will be 
+used by Spring to inject an instance of the BookRepository
+
+Here is a code snippet of the class initialization: 
+
+```java
+@SpringBootTest(classes = InMemoryRepositoryTestingApplication.class)
+class SpringBookRepositoryTest {
+    @Autowired
+    private BookRepository bookRepository;
+
+    ...
+}
+```
+
+The above tests work perfect! But, let us have a look at the timing!
 
 #### Test Cases Timings
+
+The below table illustrates the time taken by each test: 
 
 |                  Test Name                  | Setup | Execution | TearDown |
 | ------------------------------------------- | ----- | --------- | -------- |
@@ -49,6 +73,8 @@ need to start Spring. Thus, losing a lot of precious time!
 | it_counts_the_number_of_books_in_repository |   4   |     3     |    4     |
 | it_deletes_a_book                           |   5   |     6     |    3     |
 | it_deletes_a_book_by_id                     |   3   |     11    |    2     |
+
+
 
 #### Spring Context Setup 
 
