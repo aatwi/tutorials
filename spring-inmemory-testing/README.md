@@ -63,28 +63,43 @@ The above tests work perfect! But, let us have a look at the timing!
 
 The below table illustrates the time taken by each test: 
 
-|                  Test Name                  | Setup | Execution | TearDown |
-| ------------------------------------------- | ----- | --------- | -------- |
-| it_saves_the_books_to_the_database          |   4   |     0     |    4     |
-| it_finds_all_the_books_in_the_database      |   4   |     2     |    3     |
-| it_finds_a_book_by_an_id                    |   4   |     6     |    4     |
-| it_finds_books_by_author_name               |   4   |     27    |    3     |
-| it_returns_true_if_book_exists              |  150  |     8     |    11    |
-| it_counts_the_number_of_books_in_repository |   4   |     3     |    4     |
-| it_deletes_a_book                           |   5   |     6     |    3     |
-| it_deletes_a_book_by_id                     |   3   |     11    |    2     |
+|                  Test Name                  |  Run 1(ms) |  Run 2(ms) |  Run 3(ms) |
+| ------------------------------------------- | ---------- | ---------- | ---------- |
+| it_saves_the_books_to_the_database          |     11     |     10     |     12     |
+| it_finds_all_the_books_in_the_database      |     11     |     10     |     10     |
+| it_finds_a_book_by_an_id                    |     15     |     16     |     19     |
+| it_finds_books_by_author_name               |     49     |     46     |     45     |
+| it_returns_true_if_book_exists              |     280    |     254    |     270    |
+| it_counts_the_number_of_books_in_repository |     13     |     12     |     14     |
+| it_deletes_a_book                           |     14     |     15     |     18     |
+| it_deletes_a_book_by_id                     |     16     |     20     |     19     |
+| SpringBookRepositoryTest                    |    5359    |    4712    |    4819    |
+| InMemoryRepositoryTestingApplicationTests   |     781    |     847    |     910    |
+| **Total**                                   |    7330    |    6789    |    7046    |
 
-
-
-#### Spring Context Setup 
-
-|                Test Class                 | Time | 
-| ----------------------------------------- | ---- |
-|            BookRepositoryTest             | 2639 |
-| InMemoryRepositoryTestingApplicationTests | 556  |
+Notice that most of the time is consumed by the last 2 rows of the above table. 
+Those two rows are not part of our tests, they are context setup to run the 
+SpringBoot tests. 
                     
 
 ## Solution 
+
+### Illustration  
+
+#### Test Cases Timings
+
+The below table illustrates the time taken by each test: 
+
+|                  Test Name                  |  Run 1(ms) |  Run 2(ms) |  Run 3(ms) | 
+| ------------------------------------------- | ---------- | ---------- | ---------- | 
+| it_saves_the_books_to_the_database          |     2      |     2      |     2      | 
+| it_finds_all_the_books_in_the_database      |     5      |     6      |     10     | 
+| it_finds_a_book_by_an_id                    |     3      |     4      |     4      | 
+| it_finds_books_by_author_name               |     5      |     6      |     6      | 
+| it_returns_true_if_book_exists              |     12     |     19     |     14     | 
+| it_counts_the_number_of_books_in_repository |     5      |     5      |     6      | 
+| it_deletes_a_book                           |     7      |     11     |     8      | 
+| it_deletes_a_book_by_id                     |     8      |     8      |     15     | 
 
 ## Resources 
 

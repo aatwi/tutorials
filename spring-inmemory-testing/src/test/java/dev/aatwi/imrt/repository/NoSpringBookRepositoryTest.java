@@ -102,7 +102,7 @@ class NoSpringBookRepositoryTest {
 
     @Test
     public void
-    it_deletes_by_id() {
+    it_deletes_a_book_by_id() {
         bookRepository.deleteById(cleanCode.getBookId());
         bookRepository.deleteById(refactoring.getBookId());
         bookRepository.deleteById(cleanArchitecture.getBookId());
