@@ -63,7 +63,7 @@ The above tests work perfect! But, let us have a look at the timing!
 
 The below table illustrates the time taken by each test: 
 
-|                  Test Name                  |  Run 1(ms) |  Run 2(ms) |  Run 3(ms) |
+| Test Name                                   |  Run 1(ms) |  Run 2(ms) |  Run 3(ms) |
 | ------------------------------------------- | ---------- | ---------- | ---------- |
 | it_saves_the_books_to_the_database          |     11     |     10     |     12     |
 | it_finds_all_the_books_in_the_database      |     11     |     10     |     10     |
@@ -80,11 +80,39 @@ The below table illustrates the time taken by each test:
 Notice that most of the time is consumed by the last 2 rows of the above table. 
 Those two rows are not part of our tests, they are context setup to run the 
 SpringBoot tests. 
-                    
+
+The question is do we need to have Spring running when performing the tests? 
+
+The answer is no! But, what can it be replaced with? 
 
 ## Solution 
 
+To solve the above problem, we need to provide an implementation of the BookRepository
+interface. There are two ways to do so: 
+1. Write our own implementation, but this is complex, faulty and time wasting.
+1. Find a way to inject an Implementation of BookRepository similar to what Spring does.  
+
 ### Illustration  
+
+```java
+class NoSpringBookRepositoryTest {
+
+    private static EntityManagerFactory entityManagerFactory;
+    private static EntityManager entityManager;
+    private static BookRepository bookRepository;
+
+    ...
+
+    @BeforeAll
+    public static void setup() {
+        entityManagerFactory = Persistence.createEntityManagerFactory("InMemoryRepository");
+        entityManager = entityManagerFactory.createEntityManager();
+        JpaRepositoryFactory factory = new JpaRepositoryFactory(entityManager);
+        bookRepository = factory.getRepository(BookRepository.class);
+    }
+
+    ...
+```
 
 #### Test Cases Timings
 
