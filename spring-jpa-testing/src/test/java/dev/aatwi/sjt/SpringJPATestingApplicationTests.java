@@ -1,4 +1,4 @@
-package dev.aatwi.imrt;
+package dev.aatwi.sjt;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

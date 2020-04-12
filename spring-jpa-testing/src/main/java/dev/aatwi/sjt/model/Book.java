@@ -1,4 +1,4 @@
-package dev.aatwi.imrt.model;
+package dev.aatwi.sjt.model;
 
 import javax.persistence.*;
 import java.util.Objects;

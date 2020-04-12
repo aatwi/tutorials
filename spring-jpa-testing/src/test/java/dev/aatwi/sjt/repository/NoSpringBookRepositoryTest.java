@@ -1,6 +1,6 @@
-package dev.aatwi.imrt.repository;
+package dev.aatwi.sjt.repository;
 
-import dev.aatwi.imrt.model.Book;
+import dev.aatwi.sjt.model.Book;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;

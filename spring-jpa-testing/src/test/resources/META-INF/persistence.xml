@@ -6,7 +6,7 @@
     <persistence-unit name="InMemoryRepository" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <!-- add classes -->
-        <class>dev.aatwi.imrt.model.Book</class>
+        <class>dev.aatwi.sjt.model.Book</class>
 
         <properties>
             <!-- Configuring JDBC properties -->

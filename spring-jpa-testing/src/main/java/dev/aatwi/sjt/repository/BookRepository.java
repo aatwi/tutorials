@@ -1,6 +1,6 @@
-package dev.aatwi.imrt.repository;
+package dev.aatwi.sjt.repository;
 
-import dev.aatwi.imrt.model.Book;
+import dev.aatwi.sjt.model.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

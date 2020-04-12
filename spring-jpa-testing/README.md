@@ -1,10 +1,11 @@
 # Faster Testing of the Repository Layer in Spring Applications
 
-In this project, I will show how to write tests for the repository layer in a 
-Spring Application without running the server.
+In this project, I will show how to test the repository layer in a Spring Application
+without using SpringBootTest that runs the Spring Framework every time a test is
+ran.
 
-The main purpose of this approach is to make the tests run faster; thus, having
-a faster feedback loop.
+The main purpose of this approach is to make the tests in our Spring Application 
+run faster; thus, having a faster feedback loop.
 
 ## Tutorial Description
 
@@ -145,12 +146,25 @@ The below table illustrates the time (in ms) taken by each test:
 
 **JRF = using JpaRepositoryFactory* 
                              
-The above indicates that we have gained on average 6,700 ms in each test run!
+The above indicates that we have gained on average **6,700 ms** in each test run!
+               
+## Try It
+
+To try this tutorial on your machine, run this maven command:  
+```
+mvn clean install
+``` 
+The 'JUnit Insights' configuration defined in the 'maven-surefire-plugin' will 
+generate the test reports under a 'reports' folder.    
+
                                                                                                                      
 ## Keep In Mind
 
-H2 InMemory Database
-Configuration file
+Keep in mind the following points when referencing this project: 
+1. **H2 InMemory Database**: Here I am using 'H2 InMemory' as the database. 
+Of course, the logic in this application works with any other DB instance. You
+just need to modify the configuration accordingly.   
+1. **Configuration Files**: 
  
 
 ## Resources 
