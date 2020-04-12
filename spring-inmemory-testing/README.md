@@ -127,7 +127,7 @@ Let's see how the timings are now!
 
 The below table illustrates the time (in ms) taken by each test: 
 
-|                  Test Name                  |  Run-1 (SBT) | Run-1 (JRF) | Run-2 (SBT) | Run-1 (JRF) | Run-3 (SBT) | Run-3 (JRF) | 
+|                  Test Name                  |  Run-1 (SBT) | Run-1 (JRF) | Run-2 (SBT) | Run-2 (JRF) | Run-3 (SBT) | Run-3 (JRF) | 
 | ------------------------------------------- | -----------  | ----------- | ----------- | ----------- | ----------  | ----------- | 
 | it_saves_the_books_to_the_database          |      11      |      2      |      10     |      2      |      12     |      2      | 
 | it_finds_all_the_books_in_the_database      |      11      |      5      |      10     |      6      |      10     |      10     | 
