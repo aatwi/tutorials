@@ -48,7 +48,7 @@ used by Spring to inject an instance of the BookRepository
 Here is a code snippet of the test class initialization: 
 
 ```java
-@SpringBootTest(classes = InMemoryRepositoryTestingApplication.class)
+@SpringBootTest(classes = SpringJPATestingApplication.class)
 class SpringBookRepositoryTest {
     @Autowired
     private BookRepository bookRepository;

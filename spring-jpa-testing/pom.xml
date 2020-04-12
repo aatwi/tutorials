@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>dev.aatwi</groupId>
-    <artifactId>spring-inmemory-testing</artifactId>
+    <artifactId>spring-jpa-testing</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Spring JPA Testing</name>
     <description>Testing the Repository in an InMemory mode</description>
