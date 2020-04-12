@@ -1,6 +1,6 @@
 package dev.aatwi.imrt.repository;
 
-import dev.aatwi.imrt.InMemoryRepositoryTestingApplication;
+import dev.aatwi.imrt.SpringJPATestingApplication;
 import dev.aatwi.imrt.model.Book;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -13,7 +13,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest(classes = InMemoryRepositoryTestingApplication.class)
+@SpringBootTest(classes = SpringJPATestingApplication.class)
 class SpringBookRepositoryTest {
     @Autowired
     private BookRepository bookRepository;

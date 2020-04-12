@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class InMemoryRepositoryTestingApplication {
+public class SpringJPATestingApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(InMemoryRepositoryTestingApplication.class, args);
+		SpringApplication.run(SpringJPATestingApplication.class, args);
 	}
 
 }
