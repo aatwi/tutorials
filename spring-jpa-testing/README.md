@@ -161,7 +161,14 @@ The above table clearly shows that we gained on average **6,700 ms** for each te
 
 ## Conclusion
 
+As developers, we always aim at making our tests run faster. Simply because that 
+fastens the feedback loop and thus allowing us to run the tests more often! 
 
+As a result, the confidence in the code increases! 
+
+By following the approach defined in this tutorial, we can gain time in some of 
+the tests. Of course, this can't be applied for all the tests because it is required
+to have Spring up and running for certain tests in the Spring application. 
 
 ## Try It
 
@@ -176,10 +183,10 @@ generate the test reports under a 'reports' folder.
 ## Keep In Mind
 
 Keep in mind the following points when referencing this project: 
-1. **H2 InMemory Database**: Here I am using 'H2 InMemory' as the database. 
-Of course, the logic in this application works with any other DB instance. You
-just need to modify the configuration accordingly.   
-1. **Configuration Files**: Loading H2 and starting Spring for the tests requires
+1. **H2 InMemory Database**: Here I am using 'H2 InMemory' as the in-memory 
+database. Of course, the logic in this application works with any other DB 
+instance. You just need to modify the configuration accordingly.   
+1. **Configuration Files**: Loading H2 and starting Spring for the tests require
 the following configuration files:  
     1. [persistence.xml](src\test\resources\META-INF\persistence.xml)
     1. [application.properties](src\test\resources\application.properties)
