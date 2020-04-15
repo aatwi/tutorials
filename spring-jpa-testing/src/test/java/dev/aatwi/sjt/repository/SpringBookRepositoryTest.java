@@ -80,7 +80,12 @@ class SpringBookRepositoryTest {
     public void
     it_deletes_a_book() {
         bookRepository.delete(cleanCode);
+        bookRepository.delete(refactoring);
+        bookRepository.delete(cleanArchitecture);
+
         assertFalse(bookRepository.existsById(cleanCode.getBookId()));
+        assertFalse(bookRepository.existsById(refactoring.getBookId()));
+        assertFalse(bookRepository.existsById(cleanArchitecture.getBookId()));
     }
 
     @Test
