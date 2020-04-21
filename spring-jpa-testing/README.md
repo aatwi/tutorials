@@ -15,11 +15,11 @@ or Service code.
 
 ### Project Structure 
 The project contains the following Java classes: 
-1. [Book.java](src\main\java\dev\aatwi\sjt\model\Book.java): This class defines the Book entity class.
-1. [BookRepository.java](src\main\java\dev\aatwi\sjt\repository\BookRepository.java): This interface extends the 'JpaRepository' interface. 
+1. [Book.java](src/main/java/dev/aatwi/sjt/model/Book.java): This class defines the Book entity class.
+1. [BookRepository.java](src/main/java/dev/aatwi/sjt/repository/BookRepository.java): This interface extends the 'JpaRepository' interface. 
 In addition to the inherited functionalities, we have a new method that finds books by 'Author Name'.
-1. [SpringBookRepositoryTest.java](src\test\java\dev\aatwi\sjt\repository\SpringBookRepositoryTest.java): This is a SpringBootTest, thus, it starts a Spring instance before running the tests. 
-1. [NoSpringBookRepositoryTest.java](src\test\java\dev\aatwi\sjt\repository\NoSpringBookRepositoryTest.java): This test suite does not require running Spring when running tests. 
+1. [SpringBookRepositoryTest.java](src/test/java/dev/aatwi/sjt/repository/SpringBookRepositoryTest.java): This is a SpringBootTest, thus, it starts a Spring instance before running the tests. 
+1. [NoSpringBookRepositoryTest.java](src/test/java/dev/aatwi/sjt/repository/NoSpringBookRepositoryTest.java): This test suite does not require running Spring when running tests. 
 
 Both test classes above contains the same 8 test cases that cover the methods 
 1. save
@@ -48,7 +48,7 @@ any test, we need to start Spring. Thus, losing a lot of precious time!
 ### Illustration  
 Let's analyze the problem! 
 
-To run the class [SpringBookRepositoryTest.java](src\test\java\dev\aatwi\sjt\repository\SpringBookRepositoryTest.java), 
+To run the class [SpringBookRepositoryTest.java](src/test/java/dev/aatwi/sjt/repository/SpringBookRepositoryTest.java), 
 we need to: 
 1. Tag the test with the '@SpringBootTest'annotation. This will be used to run
 Spring Boot server before running the test.
@@ -188,9 +188,9 @@ database. Of course, the logic in this application works with any other DB
 instance. You just need to modify the configuration accordingly.   
 1. **Configuration Files**: Loading H2 and starting Spring for the tests require
 the following configuration files:  
-    1. [persistence.xml](src\test\resources\META-INF\persistence.xml)
-    1. [application.properties](src\test\resources\application.properties)
-    1. [create_tables.sql](src\test\resources\create_tables.sql)
+    1. [persistence.xml](src/test/resources/META-INF/persistence.xml)
+    1. [application.properties](src/test/resources/application.properties)
+    1. [create_tables.sql](src/test/resources/create_tables.sql)
  
 
 ## Resources 
