@@ -5,7 +5,6 @@
                                  http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
     <persistence-unit name="InMemoryRepository" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <!-- add classes -->
         <class>dev.aatwi.sjt.model.Book</class>
 
         <properties>
@@ -20,7 +19,6 @@
             <property name="hibernate.ddl-auto" value="update"/>
             <property name="hibernate.format_sql" value="false"/>
             <property name="hibernate.show_sql" value="true"/>
-
         </properties>
     </persistence-unit>
 </persistence>

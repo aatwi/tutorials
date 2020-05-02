@@ -46,19 +46,19 @@ class NoSpringBookRepositoryTest {
     }
 
     @Test
-    public void it_saves_the_books_to_the_database() {
+    public void itSavesTheBooksToTheDatabase() {
         assertTrue(cleanCode.getBookId() > 0);
         assertTrue(refactoring.getBookId() > 0);
         assertTrue(cleanArchitecture.getBookId() > 0);
     }
 
     @Test
-    public void it_finds_all_the_books_in_the_database() {
+    public void itFindsAllTheBooksInTheDatabase() {
         assertEquals(3, bookRepository.findAll().size());
     }
 
     @Test
-    public void it_finds_a_book_by_an_id() {
+    public void itFindsABookByAnId() {
         assertEquals(cleanCode, bookRepository.findById(cleanCode.getBookId()).get());
         assertEquals(refactoring, bookRepository.findById(refactoring.getBookId()).get());
         assertEquals(cleanArchitecture, bookRepository.findById(cleanArchitecture.getBookId()).get());
@@ -66,7 +66,7 @@ class NoSpringBookRepositoryTest {
 
     @Test
     public void
-    it_finds_books_by_author_name() {
+    itFindsBooksByAuthorName() {
         List<Book> robertMartin = bookRepository.findAllByAuthor("Robert Martin");
         List<Book> martinFowler = bookRepository.findAllByAuthor("Martin Fowler");
 
@@ -76,7 +76,7 @@ class NoSpringBookRepositoryTest {
 
     @Test
     public void
-    it_returns_true_if_book_exists() {
+    itReturnsTrueIfBookExists() {
         assertTrue(bookRepository.existsById(cleanCode.getBookId()));
         assertTrue(bookRepository.existsById(refactoring.getBookId()));
         assertTrue(bookRepository.existsById(cleanArchitecture.getBookId()));
@@ -84,13 +84,13 @@ class NoSpringBookRepositoryTest {
 
     @Test
     public void
-    it_counts_the_number_of_books_in_repository() {
+    itCountsTheNumberOfBooksInRepository() {
         assertEquals(3, bookRepository.count());
     }
 
     @Test
     public void
-    it_deletes_a_book() {
+    itDeletesABook() {
         bookRepository.delete(cleanCode);
         bookRepository.delete(refactoring);
         bookRepository.delete(cleanArchitecture);
@@ -102,7 +102,7 @@ class NoSpringBookRepositoryTest {
 
     @Test
     public void
-    it_deletes_a_book_by_id() {
+    itDeletesABookById() {
         bookRepository.deleteById(cleanCode.getBookId());
         bookRepository.deleteById(refactoring.getBookId());
         bookRepository.deleteById(cleanArchitecture.getBookId());

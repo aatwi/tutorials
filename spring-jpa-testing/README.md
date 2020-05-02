@@ -50,7 +50,7 @@ Let's analyze the problem!
 
 To run the class [SpringBookRepositoryTest.java](src/test/java/dev/aatwi/sjt/repository/SpringBookRepositoryTest.java), 
 we need to: 
-1. Tag the test with the '@SpringBootTest'annotation. This will be used to run
+1. Tag the test with the '@SpringBootTest' annotation. This will be used to run
 Spring Boot server before running the test.
 1. Tag the BookRepository variable with '@Autowired' annotation. This will be 
 used by Spring to inject an instance of the BookRepository
@@ -75,19 +75,19 @@ But, let us have a look at the timing!
 
 The below table illustrates the time taken by each test: 
 
-| Test Name                                   |  Run-1(ms) |  Run-2(ms) |  Run-3(ms) |
-| ------------------------------------------- | ---------- | ---------- | ---------- |
-| it_saves_the_books_to_the_database          |     11     |     10     |     12     |
-| it_finds_all_the_books_in_the_database      |     11     |     10     |     10     |
-| it_finds_a_book_by_an_id                    |     15     |     16     |     19     |
-| it_finds_books_by_author_name               |     49     |     46     |     45     |
-| it_returns_true_if_book_exists              |     280    |     254    |     270    |
-| it_counts_the_number_of_books_in_repository |     13     |     12     |     14     |
-| it_deletes_a_book                           |     14     |     15     |     18     |
-| it_deletes_a_book_by_id                     |     16     |     20     |     19     |
-| Test Class Initialization                   |    5359    |    4712    |    4819    |
-| SpringBootTest Initialization               |     781    |     847    |     910    |
-| **Total**                                   |  **7330**  |  **6789**  |  **7046**  |
+| Test Name                            |  Run-1(ms) |  Run-2(ms) |  Run-3(ms) |
+| ------------------------------------ | ---------- | ---------- | ---------- |
+| itSavesTheBooksToTheDatabase         |     11     |     10     |     12     |
+| itFindsAllTheBooksInTheDatabase      |     11     |     10     |     10     |
+| itFindsABookByAnId                   |     15     |     16     |     19     |
+| itFindsBooksByAuthorName             |     49     |     46     |     45     |
+| itReturnsTrueIfBookExists            |     280    |     254    |     270    |
+| itCountsTheNumberOfBooksInRepository |     13     |     12     |     14     |
+| itDeletesABook                       |     14     |     15     |     18     |
+| itDeletesABookById                   |     16     |     20     |     19     |
+| Test Class Initialization            |    5359    |    4712    |    4819    |
+| SpringBootTest Initialization        |     781    |     847    |     910    |
+| **Total**                            |  **7330**  |  **6789**  |  **7046**  |
 
 Notice that most of the time is consumed by the last 2 rows of the above table. 
 Those two rows are not part of our tests, they are context setup to run the 
@@ -139,19 +139,19 @@ Let's see how the timings are now!
 
 The below table compares the timing between the two test classes:
 
-|                  Test Name                  |  Run-1 (SBT) | Run-1 (JRF) | Run-2 (SBT) | Run-2 (JRF) | Run-3 (SBT) | Run-3 (JRF) | 
-| ------------------------------------------- | -----------  | ----------- | ----------- | ----------- | ----------  | ----------- | 
-| it_saves_the_books_to_the_database          |      11      |      2      |      10     |      2      |      12     |      2      | 
-| it_finds_all_the_books_in_the_database      |      11      |      5      |      10     |      6      |      10     |      10     | 
-| it_finds_a_book_by_an_id                    |      15      |      3      |      16     |      4      |      19     |      4      | 
-| it_finds_books_by_author_name               |      49      |      5      |      46     |      6      |      45     |      6      | 
-| it_returns_true_if_book_exists              |      280     |      12     |      254    |      19     |      270    |      14     | 
-| it_counts_the_number_of_books_in_repository |      13      |      5      |      12     |      5      |      14     |      6      | 
-| it_deletes_a_book                           |      14      |      7      |      15     |      11     |      18     |      8      | 
-| it_deletes_a_book_by_id                     |      16      |      8      |      20     |      8      |      19     |      15     |
-| Test Class Initialization                   |     5359     |     275     |     4712    |     298     |     4819    |     296     |
-| SpringBootTest Initialization               |      781     |      0      |      847    |      0      |      910    |      0      |
-| **Total**                                   |   **7330**   |   **322**   |   **6789**  |   **359**   |   **7046**  |   **361**   |
+|                  Test Name           |  Run-1 (SBT) | Run-1 (JRF) | Run-2 (SBT) | Run-2 (JRF) | Run-3 (SBT) | Run-3 (JRF) | 
+| ------------------------------------ | -----------  | ----------- | ----------- | ----------- | ----------  | ----------- | 
+| itSavesTheBooksToTheDatabase         |      11      |      2      |      10     |      2      |      12     |      2      | 
+| itFindsAllTheBooksInTheDatabase      |      11      |      5      |      10     |      6      |      10     |      10     | 
+| itFindsABookByAnId                   |      15      |      3      |      16     |      4      |      19     |      4      | 
+| itFindsBooksByAuthorName             |      49      |      5      |      46     |      6      |      45     |      6      | 
+| itReturnsTrueIfBookExists            |      280     |      12     |      254    |      19     |      270    |      14     | 
+| itCountsTheNumberOfBooksInRepository |      13      |      5      |      12     |      5      |      14     |      6      | 
+| itDeletesABook                       |      14      |      7      |      15     |      11     |      18     |      8      | 
+| itDeletesABookById                   |      16      |      8      |      20     |      8      |      19     |      15     |
+| Test Class Initialization            |     5359     |     275     |     4712    |     298     |     4819    |     296     |
+| SpringBootTest Initialization        |      781     |      0      |      847    |      0      |      910    |      0      |
+| **Total**                            |   **7330**   |   **322**   |   **6789**  |   **359**   |   **7046**  |   **361**   |
 
 **SBT = using SpringBootTest*
 
