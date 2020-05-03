@@ -5,7 +5,7 @@ articles include code snippets for demoing the problem and solution. This is a g
 feature, but, in my opinion, it is not enough! 
    
 The purpose of this repository is to accumulate all the code for the technical 
-articles I write on my personal [blog post](https://ahmadatwi.me/). 
+articles I write on my personal [web site](https://ahmadatwi.me/). 
 
 # Sub Modules  
 ## [Spring JPA Testing](spring-jpa-testing/README.md)
