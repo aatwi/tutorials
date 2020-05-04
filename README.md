@@ -15,6 +15,6 @@ without using SpringBootTest that runs the Spring Framework for each test class.
 The main purpose of this approach is to make the tests in our Spring Application 
 run faster; thus, having a faster feedback loop.
 
-Check my [blog post]() for further explanation of the problem! 
+Check my [blog post](https://ahmadatwi.me/2020/05/04/faster-testing-of-the-jpa-repository-in-spring-applications/) for further explanation of the problem! 
 
 
