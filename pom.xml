@@ -6,6 +6,7 @@
 
     <groupId>dev.aatwi</groupId>
     <artifactId>tutorials</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <properties>

@@ -17,4 +17,8 @@ run faster; thus, having a faster feedback loop.
 
 Check my [blog post](https://ahmadatwi.me/2020/05/04/faster-testing-of-the-jpa-repository-in-spring-applications/) for further explanation of the problem! 
 
+## [Java Ruby JMeter Integration](jruby-jmeter-integration/README.md)
+
+Check my [blog post](http://ahmadatwi.me/2015/12/27/how-to-reference-ruby-jmeter-from-java-project/) for further explanation of the problem! 
+
 
